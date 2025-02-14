@@ -17,15 +17,43 @@ public class CityInfo {
   @JsonProperty("days")
   List<Days> days;
 
-  static class CurrentConditions {
+  public String getAddress() {
+    return address;
+  }
+  public void setAddress(String address) {
+    this.address = address;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public CurrentConditions getCurrentConditions() {
+    return currentConditions;
+  }
+  public void setCurrentConditions(CurrentConditions currentConditions) {
+    this.currentConditions = currentConditions;
+  }
+
+  public List<Days> getDays() {
+    return days;
+  }
+  public void setDays(List<Days> days) {
+    this.days = days;
+  }
+
+  public static class CurrentConditions {
     @JsonProperty("temp")
     String currentTemperature;
 
     @JsonProperty("sunrise")
-    String sunrise;
+     String sunrise;
 
     @JsonProperty("sunset")
-    String sunset;
+     String sunset;
 
     @JsonProperty("feelslike")
     String feelslike;
@@ -35,9 +63,40 @@ public class CityInfo {
 
     @JsonProperty("conditions")
     String conditions;
+
+    @JsonProperty("precip")
+    String precip;
+    
+    public String getSunrise() {
+      return sunrise;
+    }
+    public void setSunrise(String sunrise) {
+      this.sunrise = sunrise;
+    }
+
+    public String getSunset() {
+      return sunset;
+    }
+    public void setSunset(String sunset) {
+      this.sunset = sunset;
+    }
+
+    public String getDescription() {
+      return conditions;
+    }
+    public void setDescription(String conditions) {
+      this.conditions = conditions;
+    }
+
+    public String getPrecip() {
+      return precip;
+    }
+    public void setPrecip(String precip) {
+      this.precip = precip;
+    }
   }
 
-  static class Days {
+  public static class Days {
 
     @JsonProperty("datetime")
     String date;
@@ -56,6 +115,16 @@ public class CityInfo {
 
     @JsonProperty("description")
     String description;
+
+    @JsonProperty("precip")
+    private String precip;
+
+    public String getPrecip() {
+      return precip;
+    }
+    public void setPrecip(String precip) {
+      this.precip = precip;
+    }
 
   }
 
